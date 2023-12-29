@@ -1,0 +1,92 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.36.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           parsing-recipe
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/gregorias/parsing-recipe#readme>
+homepage:       https://github.com/gregorias/parsing-recipe#readme
+bug-reports:    https://github.com/gregorias/parsing-recipe/issues
+author:         Grzegorz Milka
+maintainer:     grzegorzmilka@gmail.com
+copyright:      Copyright (c) 2023 Grzegorz Milka
+license:        AGPL-3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/gregorias/parsing-recipe
+
+library
+  exposed-modules:
+      BankRecord
+      Data.Time.Extra
+      Kitchen
+      Text.Megaparsec.Extra
+  other-modules:
+      Paths_parsing_recipe
+  hs-source-dirs:
+      src
+  default-extensions:
+      DataKinds
+      DerivingStrategies
+      DerivingVia
+      DuplicateRecordFields
+      FunctionalDependencies
+      GADTs
+      LambdaCase
+      MultiWayIf
+      NoImplicitPrelude
+      OverloadedLabels
+      OverloadedRecordDot
+      OverloadedStrings
+      TypeFamilies
+      TypeOperators
+  ghc-options: -Wall -Werror -Wcompat -Wmissing-deriving-strategies -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wpartial-fields -Wredundant-constraints -Wno-type-defaults -Wno-partial-type-signatures -Wno-name-shadowing -Wunused-packages
+  build-depends:
+      barbies
+    , base >=4.17 && <5
+    , extra
+    , megaparsec
+    , relude
+    , time
+  default-language: GHC2021
+
+test-suite parsing-recipe-test
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      Paths_parsing_recipe
+  hs-source-dirs:
+      test
+  default-extensions:
+      DataKinds
+      DerivingStrategies
+      DerivingVia
+      DuplicateRecordFields
+      FunctionalDependencies
+      GADTs
+      LambdaCase
+      MultiWayIf
+      NoImplicitPrelude
+      OverloadedLabels
+      OverloadedRecordDot
+      OverloadedStrings
+      TypeFamilies
+      TypeOperators
+  ghc-options: -Wall -Werror -Wcompat -Wmissing-deriving-strategies -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wpartial-fields -Wredundant-constraints -Wno-type-defaults -Wno-partial-type-signatures -Wno-name-shadowing -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      barbies
+    , base >=4.17 && <5
+    , hspec
+    , hspec-expectations-pretty-diff
+    , megaparsec
+    , parsing-recipe
+    , relude
+    , time
+  default-language: GHC2021
